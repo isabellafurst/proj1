@@ -47,21 +47,6 @@ def greet():
 # It's unlikely you will ever need anything like this in your own applications, so
 # you should probably delete this handler
 
-@app.route('/formecho/', methods=['GET','POST'])
-def formecho():
-    if request.method == 'GET':
-        return render_template('form_data.html',
-                               page_title='Display of Form Data',
-                               method=request.method,
-                               form_data=request.args)
-    elif request.method == 'POST':
-        return render_template('form_data.html',
-                               page_title='Display of Form Data',
-                               method=request.method,
-                               form_data=request.form)
-    else:
-        raise Exception('this cannot happen')
-
 # This route shows how to render a page with a form on it.
 
 @app.route('/testform/')
